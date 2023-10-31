@@ -24,12 +24,12 @@
         <param name="min">18</param>
         <message>Age should be above ${min}</message>
     </validator>
-    <validator type="requiredstring">
-        <param name="fieldName">email</param>
-        <message>Email is required</message>
-    </validator>
-    <validator type="email">
-        <param name="fieldName">email</param>
-        <message>Must provide a valid email</message>
-    </validator>
+    <field name="email">
+        <field-validator type="requiredstring">
+            <message>Email is required</message>
+        </field-validator>
+        <field-validator type="email">
+            <message>Must provide a valid email</message>
+        </field-validator>
+    </field>
 </validators>

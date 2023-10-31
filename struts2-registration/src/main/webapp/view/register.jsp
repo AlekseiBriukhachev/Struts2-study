@@ -14,6 +14,10 @@
         <s:radio name="gender" list="{'Male', 'Female'}" label="Gender"/>
         <s:textfield name="age" label="Age"/>
         <s:textfield name="email" label="Email"/>
+        <s:textarea name="address" cols="30" rows="7" label="Address"/>
+        <s:select multiple="true" list="{'Blue', 'Red', 'Green', 'White'}" name="selectedColor"
+                  headerKey="None" headerValue="Select a color" label="Favorite Color"/>
+        <s:reset value="Reset"/>
         <s:submit value="Register"/>
     </s:form>
 

@@ -10,5 +10,8 @@
             <result name="input">/view/register.jsp</result>
             <result name="error">/view/error.jsp</result>
         </action>
+        <action name="formLoadAction" method="initializeColors" class="com.aleksei.struts2.RegisterAction">
+            <result name="input">/view/register.jsp</result>
+        </action>
     </package>
 </struts>

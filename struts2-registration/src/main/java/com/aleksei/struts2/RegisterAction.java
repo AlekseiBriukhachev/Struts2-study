@@ -3,6 +3,9 @@ package com.aleksei.struts2;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 //public class RegisterAction implements Action {
 public class RegisterAction extends ActionSupport {
     private String firstName;
@@ -10,10 +13,20 @@ public class RegisterAction extends ActionSupport {
     private String gender;
     private Integer age;
     private String email;
+    private String address;
+    private String selectedColor;
+    private List<String> colors;
 
     public String execute() {
         System.out.println("execute() method called");
         return SUCCESS;
+    }
+    public void initializeColors() {
+        colors = new ArrayList<>();
+        colors.add("Red");
+        colors.add("Blue");
+        colors.add("Green");
+        colors.add("White");
     }
 
 //    public void validate() {
@@ -63,5 +76,29 @@ public class RegisterAction extends ActionSupport {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getSelectedColor() {
+        return selectedColor;
+    }
+
+    public void setSelectedColor(String selectedColor) {
+        this.selectedColor = selectedColor;
+    }
+
+    public List<String> getColors() {
+        return colors;
+    }
+
+    public void setColors(List<String> colors) {
+        this.colors = colors;
     }
 }
