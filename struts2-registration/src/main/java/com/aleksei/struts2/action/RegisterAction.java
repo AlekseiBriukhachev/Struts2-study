@@ -1,5 +1,6 @@
-package com.aleksei.struts2;
+package com.aleksei.struts2.action;
 
+import com.aleksei.struts2.Product;
 import com.opensymphony.xwork2.Action;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -11,22 +12,49 @@ public class RegisterAction extends ActionSupport {
     private String firstName;
     private String lastName;
     private String gender;
-    private Integer age;
+    private int age;
     private String email;
     private String address;
     private String selectedColor;
     private List<String> colors;
+    private boolean subscription;
+    private String message;
+    private List<String> hobbies;
+    private String selectedHobbies;
+    private List<Product> products;
 
     public String execute() {
         System.out.println("execute() method called");
+        message = subscription ? "You are subscriber" : "You aren't subscriber";
+        System.out.println(message);
         return SUCCESS;
     }
-    public void initializeColors() {
+    public String initializeFormFields() {
+        initializeColors();
+        initializeHobbies();
+        initializeProducts();
+        return INPUT;
+    }
+    private void initializeColors() {
         colors = new ArrayList<>();
         colors.add("Red");
         colors.add("Blue");
         colors.add("Green");
         colors.add("White");
+    }
+    private void initializeHobbies() {
+        hobbies = new ArrayList<>();
+        hobbies.add("Drawing");
+        hobbies.add("Teaching");
+        hobbies.add("Singing");
+        hobbies.add("Programming");
+    }
+    private void initializeProducts() {
+        products = new ArrayList<>();
+        products.add(new Product(111, "Mobile Phone", 10000));
+        products.add(new Product(222, "Camera", 7000));
+        products.add(new Product(333, "TV", 20000));
+        products.add(new Product(444, "Laptop", 30000));
     }
 
 //    public void validate() {
@@ -62,11 +90,11 @@ public class RegisterAction extends ActionSupport {
         this.gender = gender;
     }
 
-    public Integer getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(Integer age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
@@ -100,5 +128,45 @@ public class RegisterAction extends ActionSupport {
 
     public void setColors(List<String> colors) {
         this.colors = colors;
+    }
+
+    public boolean isSubscription() {
+        return subscription;
+    }
+
+    public void setSubscription(boolean subscription) {
+        this.subscription = subscription;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    public List<String> getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(List<String> hobbies) {
+        this.hobbies = hobbies;
+    }
+
+    public String getSelectedHobbies() {
+        return selectedHobbies;
+    }
+
+    public void setSelectedHobbies(String selectedHobbies) {
+        this.selectedHobbies = selectedHobbies;
+    }
+
+    public List<Product> getProducts() {
+        return products;
+    }
+
+    public void setProducts(List<Product> products) {
+        this.products = products;
     }
 }

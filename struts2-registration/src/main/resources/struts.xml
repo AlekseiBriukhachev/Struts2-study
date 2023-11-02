@@ -5,12 +5,12 @@
 
 <struts>
     <package name="register" extends="struts-default">
-        <action name="registerAction" class="com.aleksei.struts2.RegisterAction">
+        <action name="registerAction" class="com.aleksei.struts2.action.RegisterAction">
             <result name="success">/view/welcome.jsp</result>
             <result name="input">/view/register.jsp</result>
             <result name="error">/view/error.jsp</result>
         </action>
-        <action name="formLoadAction" method="initializeColors" class="com.aleksei.struts2.RegisterAction">
+        <action name="formLoadAction" class="com.aleksei.struts2.action.RegisterAction" method="initializeFormFields">
             <result name="input">/view/register.jsp</result>
         </action>
     </package>

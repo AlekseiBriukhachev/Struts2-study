@@ -29,6 +29,16 @@
     <s:label value="Favorite Color:"/>
     <s:property value="selectedColor"/><br/>
 
+    <s:if test="%{subscription}">
+        <div><s:label value="Subscribe:"/> You are subscriber</div>
+    </s:if>
+    <s:else>
+        <div><s:label value="Subscribe:"/> You aren't subscriber</div>
+    </s:else>
+
+    <s:label value="Hobbies:"/>
+    <s:property value="selectedHobbies"/><br/>
+
 
 </body>
 </html>
