@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+    <package name="productManagementApp" extends="struts-default">
+        <action name="loginAction" class="com.aleksei.actions.LoginAction">
+            <result name="success" type="redirect">welcomeAction</result>
+            <result name="input">/view/login.jsp</result>
+        </action>
+        <action name="welcomeAction" class="com.aleksei.actions.WelcomeAction">
+            <result name="success">/view/welcome.jsp</result>
+        </action>
+        <action name="addAction" class="com.aleksei.actions.AddAction">
+            <result name="success" type="redirect">welcomeAction</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="input">/view/addProduct.jsp</result>
+        </action>
+        <action name="updateDataAction" class="com.aleksei.actions.UpdateDateAction">
+            <result name="success">/view/updateProduct.jsp</result>
+            <result name="error">/view/error.jsp</result>
+        </action>
+        <action name="updateAction" class="com.aleksei.actions.UpdateAction">
+            <result name="success" type="redirect">welcomeAction</result>
+            <result name="error">/view/error.jsp</result>
+            <result name="input">/view/updateProduct.jsp</result>
+        </action>
+        <action name="deleteAction" class="com.aleksei.actions.DeleteAction">
+            <result name="success" type="redirect">welcomeAction</result>
+            <result name="error">/view/error.jsp</result>
+        </action>
+    </package>
+</struts>
